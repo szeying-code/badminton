@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Avacado BC 🏸</title>
+<meta property="og:title" content="Avacado BC 🏸">
+<meta property="og:description" content="Two sisters · one team · lots of smiles">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏸</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Banner (text comes from data/club.js) -->
+  <header class="hero">
+    <div class="sh">🏸</div>
+    <h1 id="club-name"></h1>
+    <p id="club-tagline"></p>
+  </header>
+
+  <!-- Team record (calculated from data/matches.js) -->
+  <h2>Our team record</h2>
+  <div class="card"><div class="vs">
+    <div><b id="stat-games">0</b><small>games</small></div>
+    <div><b id="stat-wins">0</b><small>wins</small></div>
+    <div><b id="stat-losses">0</b><small>losses</small></div>
+  </div></div>
+
+  <!-- Match log (from data/matches.js) -->
+  <h2>Match log</h2>
+  <div class="card" id="match-log"></div>
+
+  <!-- Photos (from data/moments.js) -->
+  <h2>Happy moments</h2>
+  <div class="grid" id="moments"></div>
+
+  <!-- Videos (from data/vlogs.js) -->
+  <h2>Vlog videos 🎬</h2>
+  <div class="vgrid" id="vlogs"></div>
+
+  <footer id="club-footer"></footer>
+</div>
+
+<!-- Your data files: these are the ones you edit -->
+<script src="data/club.js"></script>
+<script src="data/matches.js"></script>
+<script src="data/moments.js"></script>
+<script src="data/vlogs.js"></script>
+<!-- The code that builds the page: no need to touch -->
+<script src="js/script.js"></script>
+</body>
+</html>
