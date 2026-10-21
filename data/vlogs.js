@@ -14,5 +14,6 @@
 var VLOGS = [
   { title: "Badminton Vlog 1", file: "Badminton Vlog 1_17102026.mp4" },
   { title: "Sheffield Competition", file: "Sheffield Competition 28032025.MP4" },
+  { title: "All England Mini Vlog", file: "All England Mini Vlog 04032026" },
   { title: "Birmingham trip with Wei", file: "birmingham trip with wei_27092026.mp4" }
 ];
