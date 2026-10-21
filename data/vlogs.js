@@ -12,7 +12,7 @@
 //      { title: "Coming soon" },
 
 var VLOGS = [
-  { title: "Our first vlog" },
-  { title: "Happy game day" },
-  { title: "Funny bloopers" }
+  { title: "Badminton Vlog 1", file: "Badminton Vlog 1_17102026.mp4" },
+  { title: "Sheffield Competition", file: "Sheffield Competition 28032025.MP4" },
+  { title: "Birmingham trip with Wei", file: "birmingham trip with wei_27092026.mp4" }
 ];
