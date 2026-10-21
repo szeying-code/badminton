@@ -8,7 +8,7 @@
 // Tip: shrink big phone photos first (under ~500 KB) so the page loads fast.
 
 var MOMENTS = [
-  { img: "selfie image.jpeg", emoji: "📸", caption: "My Team" },
+  { img: "selfie image.png", emoji: "📸", caption: "My Team" },
   { img: "", emoji: "😂", caption: "Funniest rally" },
   { img: "sheffiled competition medal.png.jpeg", emoji: "🥇", caption: "Winner pose" },
   { img: "", emoji: "🧋", caption: "Bubble tea after play" }
