@@ -39,15 +39,17 @@
 
   // Videos
   $("vlogs").innerHTML = VLOGS.map(function (v) {
+    var note = v.date ? "<br><small style=\"opacity:.75\">📅 " + esc(v.date) + "</small>" : "";
+    var cap = "<figcaption>" + esc(v.title) + note + "</figcaption>";
     if (v.youtube) {
       return '<figure class="vc"><iframe src="https://www.youtube.com/embed/' + esc(v.youtube) +
-        '" title="' + esc(v.title) + '" loading="lazy" allowfullscreen></iframe><figcaption>' +
-        esc(v.title) + "</figcaption></figure>";
+        '" title="' + esc(v.title) + '" loading="lazy" allowfullscreen></iframe>' + cap + "</figure>";
     }
     if (v.file) {
-      return '<figure class="vc"><video src="videos/' + esc(v.file) +
-             '" controls preload="metadata" playsinline' + (v.cover ? ' poster="images/' + esc(v.cover) + '"' : '') + '></video><figcaption>' +
-        esc(v.title) + "</figcaption></figure>";
+      return '<figure class="vc"><video src="videos/' + esc(encodeURI(v.file)) +
+        '" controls preload="metadata" playsinline' +
+        (v.cover ? ' poster="images/' + esc(encodeURI(v.cover)) + '"' : "") +
+        "></video>" + cap + "</figure>";
     }
     return '<div class="vd"><i>▶</i>' + esc(v.title) + "</div>";
   }).join("");
