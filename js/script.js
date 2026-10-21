@@ -46,7 +46,7 @@
     }
     if (v.file) {
       return '<figure class="vc"><video src="videos/' + esc(v.file) +
-        '" controls preload="metadata" playsinline></video><figcaption>' +
+             '" controls preload="metadata" playsinline' + (v.cover ? ' poster="images/' + esc(v.cover) + '"' : '') + '></video><figcaption>' +
         esc(v.title) + "</figcaption></figure>";
     }
     return '<div class="vd"><i>▶</i>' + esc(v.title) + "</div>";
