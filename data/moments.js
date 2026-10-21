@@ -10,6 +10,6 @@
 var MOMENTS = [
   { img: "", emoji: "📸", caption: "Your first photo here" },
   { img: "", emoji: "😂", caption: "Funniest rally" },
-  { img: "", emoji: "🥇", caption: "Winner pose" },
+  { img: "sheffiled competition medal.png.jpeg", emoji: "🥇", caption: "Winner pose" },
   { img: "", emoji: "🧋", caption: "Bubble tea after play" }
 ];
