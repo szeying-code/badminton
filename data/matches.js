@@ -9,8 +9,8 @@
 // and remember the comma at the end of every line except the last one.
 // Delete the "Sample" lines once you add your real games.
 
-//var MATCHES = [
+var MATCHES = [
   //{ date: "Sample · 12 Oct", opponent: "Friendly game", us: 21, them: 18 },
   //{ date: "Sample · 19 Oct", opponent: "Friendly game", us: 17, them: 21 },
   //{ date: "Sample · 26 Oct", opponent: "Rematch",       us: 21, them: 19 }
-//];
+];
