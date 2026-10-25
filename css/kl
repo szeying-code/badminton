@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
+
+/* ===== BLUE THEME for the KL page. Change the colours here ===== */
+:root{
+  --bg:#e8f4ff;      /* page background (very light sky) */
+  --box1:#b7dbff;    /* sky blue box */
+  --box2:#d9f0ff;    /* pale blue box */
+  --box3:#dcd9ff;    /* light periwinkle box */
+  --box4:#fff2e7;    /* cream box */
+  --ink:#28324f;     /* main text (navy) */
+  --soft:#5a6a94;    /* softer text */
+  --blue:#5b7be0;    /* blue number */
+  --sky:#3fa9f5;     /* bright sky blue */
+  --violet:#8f7cf5;  /* violet number */
+  --line:#b5d3f2;    /* borders */
+}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:linear-gradient(180deg,#dff0ff,var(--bg) 40%,#f1f8ff);background-attachment:fixed;color:var(--ink);font-family:'Fredoka',system-ui,-apple-system,'Segoe UI',sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:16px}
+
+/* top switch buttons */
+.switch{display:flex;gap:8px;justify-content:center;margin:4px 0 14px}
+.switch a{padding:8px 16px;border-radius:99px;background:var(--box3);color:var(--ink);text-decoration:none;font-weight:600;border:1px solid var(--line)}
+.switch a.on{background:#7db8ff}
+
+/* banner */
+.hero{text-align:center;color:var(--ink);border-radius:28px;padding:28px 20px 32px;background:linear-gradient(135deg,#b7dbff,#c9ccff 55%,#e2dcff)}
+.hero-img{display:block;margin:0 auto 14px;height:clamp(150px,34vw,230px);width:auto;max-width:100%;object-fit:contain;filter:drop-shadow(0 6px 10px rgba(70,110,200,.28))}
+.hero h1{margin:6px 0;font-size:clamp(2rem,9vw,3.2rem)}
+.hero p{margin:0;opacity:.9}
+.sh{display:none}
+
+h2{margin:32px 0 12px;font-size:1.4rem}
+
+/* boxes */
+.card{background:var(--box1);border:1px solid var(--line);border-radius:24px;padding:16px}
+#match-log{background:var(--box3)}
+
+/* team record */
+.vs{display:grid;grid-template-columns:repeat(3,1fr);align-items:center;text-align:center;gap:8px}
+.vs b{display:block;font-size:2.6rem;color:var(--blue)}
+.vs div:nth-child(2) b{color:var(--sky)}
+.vs div:nth-child(3) b{color:var(--violet)}
+.vs small{color:var(--soft)}
+
+/* match log */
+.m{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.m:last-child{border:0}
+.m span{color:var(--soft);font-size:.9rem}
+.sc{font-weight:700;text-align:right}
+.tag{font-size:.75rem;color:#14305a;font-weight:600;border-radius:99px;padding:2px 10px;background:var(--sky)}
+.tag.s{background:#b9b4ff;color:#2a2466}
+
+/* photos */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.ph{background:var(--box2);border:2px dashed var(--line);border-radius:22px;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px;font-size:.85rem;color:var(--soft)}
+.ph i{font-style:normal;font-size:2rem}
+.ph:nth-child(4n+2){background:var(--box1)}
+.ph:nth-child(4n+3){background:var(--box3)}
+.ph:nth-child(4n+4){background:var(--box4)}
+.pic{margin:0;background:var(--box2);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.pic img{display:block;width:100%;aspect-ratio:1;object-fit:cover}
+.pic figcaption{padding:8px 12px;font-size:.85rem;color:var(--soft)}
+
+/* videos */
+.vgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media (min-width:600px){.vgrid{grid-template-columns:repeat(3,1fr)}}
+.vd{background:var(--box3);border:2px dashed var(--line);border-radius:22px;aspect-ratio:9/16;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--soft);font-size:.9rem;gap:6px;padding:8px}
+.vd:nth-child(2n){background:var(--box1)}
+.vd i{font-style:normal;width:52px;height:52px;border-radius:50%;background:#7db8ff;color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:1.4rem}
+.vc{margin:0;background:var(--box3);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.vc:nth-child(2n){background:var(--box1)}
+.vc video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border:0;background:#000}
+.vc iframe{display:block;width:100%;aspect-ratio:16/9;border:0;background:#000}
+.vc figcaption{padding:8px 12px;font-size:.9rem;color:var(--soft)}
+
+footer{text-align:center;color:var(--soft);margin:32px 0 16px}
