@@ -8,9 +8,8 @@
 // Newest games at the bottom. To add a game, copy a line, change it,
 // and remember the comma at the end of every line except the last one.
 // Delete the "Sample" lines once you add your real games.
-
 var MATCHES = [
-  { date: "Sheffield Mgame · 28 Mar 2026", opponent: "Malaysian Competition", us: champion,},
-  { date: "Manchester Mgame · 24 Oct 2026", opponent: "Malaysian Competition", us: silver,}
+  { date: "Sheffield Mgame · 28 Mar 2026", opponent: "Malaysian Competition", result: "🏆 Champion" },
+  { date: "Manchester Mgame · 24 Oct 2026", opponent: "Malaysian Competition", result: "🥈 Silver" }
   //{ date: "Sample · 26 Oct", opponent: "Rematch",       us: 21, them: 19 }
 ];
