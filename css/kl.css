@@ -70,7 +70,7 @@ h2{margin:32px 0 12px;font-size:1.4rem}
 .vd i{font-style:normal;width:52px;height:52px;border-radius:50%;background:#7db8ff;color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:1.4rem}
 .vc{margin:0;background:var(--box3);border:1px solid var(--line);border-radius:22px;overflow:hidden}
 .vc:nth-child(2n){background:var(--box1)}
-.vc video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border:0;background:#000}
+.vc video{display:block;width:100%;aspect-ratio:9/16;object-fit:contain;border:0;background:#000}
 .vc iframe{display:block;width:100%;aspect-ratio:16/9;border:0;background:#000}
 .vc figcaption{padding:8px 12px;font-size:.9rem;color:var(--soft)}
 
