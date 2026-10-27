@@ -51,7 +51,7 @@ var VLOGS = [
   {
     title: "Manchester Trip 2026",
     file: "manchester_trip_with _sis_2026.mov",
-    cover: "manchester_trip_with _sis_2026_cover.jpg",
+    cover: "manchester_trip_with _sis_2026_cover.JPG",
     date: "24 Oct 2026",
     category: "trip"
   }
