@@ -45,19 +45,48 @@
   }).join("");
 
   // Videos
-  $("vlogs").innerHTML = VLOGS.map(function (v) {
-    var note = v.date ? "<br><small style=\"opacity:.75\">📅 " + esc(v.date) + "</small>" : "";
+
+  // Videos: render each video using the existing card design
+  function renderVideo(v) {
+    var note = v.date
+      ? "<br><small style=\"opacity:.75\">📅 " + esc(v.date) + "</small>"
+      : "";
+
     var cap = "<figcaption>" + esc(v.title) + note + "</figcaption>";
+
     if (v.youtube) {
-      return '<figure class="vc"><iframe src="https://www.youtube.com/embed/' + esc(v.youtube) +
-        '" title="' + esc(v.title) + '" loading="lazy" allowfullscreen></iframe>' + cap + "</figure>";
+      return '<figure class="vc"><iframe src="https://www.youtube.com/embed/' +
+        esc(v.youtube) + '" title="' + esc(v.title) +
+        '" loading="lazy" allowfullscreen></iframe>' + cap + "</figure>";
     }
+
     if (v.file) {
-      return '<figure class="vc"><video src="videos/' + esc(encodeURI(v.file)) +
+      return '<figure class="vc"><video src="videos/' +
+        esc(encodeURI(v.file)) +
         '" controls preload="metadata" playsinline' +
-        (v.cover ? ' poster="images/' + esc(encodeURI(v.cover)) + '"' : "") +
+        (v.cover
+          ? ' poster="images/' + esc(encodeURI(v.cover)) + '"'
+          : "") +
         "></video>" + cap + "</figure>";
     }
+
     return '<div class="vd"><i>▶</i>' + esc(v.title) + "</div>";
-  }).join("");
+  }
+
+  // Badminton videos
+  $("vlogs").innerHTML = VLOGS
+    .filter(function (v) {
+      return v.category !== "trip";
+    })
+    .map(renderVideo)
+    .join("");
+
+  // Trip videos
+  $("trip-vlogs").innerHTML = VLOGS
+    .filter(function (v) {
+      return v.category === "trip";
+    })
+    .map(renderVideo)
+    .join("");
+
 })();
