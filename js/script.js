@@ -73,18 +73,54 @@
     return '<div class="vd"><i>▶</i>' + esc(v.title) + "</div>";
   }
 
-  // Badminton videos
+  
+  // Badminton videos: newest first, oldest last
   $("vlogs").innerHTML = VLOGS
     .filter(function (v) {
       return v.category !== "trip";
     })
+    .sort(function (a, b) {
+      function toDate(date) {
+        var parts = date.split(" ");
+        var months = {
+          Jan: 0, Feb: 1, Mar: 2, Apr: 3,
+          May: 4, Jun: 5, Jul: 6, Aug: 7,
+          Sep: 8, Oct: 9, Nov: 10, Dec: 11
+        };
+        return new Date(
+          Number(parts[2]),
+          months[parts[1]],
+          Number(parts[0])
+        );
+      }
+
+      return toDate(b.date) - toDate(a.date);
+    })
     .map(renderVideo)
     .join("");
 
-  // Trip videos
+  
+  // Trip videos: newest first, oldest last
   $("trip-vlogs").innerHTML = VLOGS
     .filter(function (v) {
       return v.category === "trip";
+    })
+    .sort(function (a, b) {
+      function toDate(date) {
+        var parts = date.split(" ");
+        var months = {
+          Jan: 0, Feb: 1, Mar: 2, Apr: 3,
+          May: 4, Jun: 5, Jul: 6, Aug: 7,
+          Sep: 8, Oct: 9, Nov: 10, Dec: 11
+        };
+        return new Date(
+          Number(parts[2]),
+          months[parts[1]],
+          Number(parts[0])
+        );
+      }
+
+      return toDate(b.date) - toDate(a.date);
     })
     .map(renderVideo)
     .join("");
