@@ -1,42 +1,16 @@
-/* Cream-theme badminton decorations: desktop side panels only.
-   Link this file after style.css. On screens below 1000px, decorations are hidden. */
-
-@media (min-width: 1000px) {
-  body {
-    position: relative;
-    isolation: isolate;
-  }
-
-  body::before,
-  body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    width: min(calc((100vw - 720px) / 2), 520px);
-    pointer-events: none;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -1;
-    opacity: .9;
-  }
-
-  /* Left panel: pastel curves and a racket */
-  body::before {
-    left: 0;
-    background-position: left center;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 1000'%3E%3Cpath d='M-30 720Q160 520 320 260Q170 500 -30 720Z' fill='%23a78bfa' opacity='.23'/%3E%3Cpath d='M0 850Q200 620 410 390Q190 590 0 850Z' fill='%23ff8cc4' opacity='.22'/%3E%3Cpath d='M-20 480Q170 290 310 40Q150 280 -20 480Z' fill='%2338b6f5' opacity='.18'/%3E%3Cpath d='M-10 920Q170 710 380 300M20 590Q200 390 400 50' fill='none' stroke='%23a78bfa' stroke-width='3' stroke-linecap='round' opacity='.4'/%3E%3Cg transform='translate(275 190) rotate(20)' fill='none' stroke='%234a3470' stroke-width='4' opacity='.65'%3E%3Cellipse rx='37' ry='50' fill='%23ffffff' fill-opacity='.45'/%3E%3Cpath d='M-27 -39L27 39M-18 -46L18 46M-8 -49L8 49M8 -49L-8 49M18 -46L-18 46M27 -39L-27 39M-35 -20H35M-37 -8H37M-37 5H37M-33 19H33' stroke='%23ffffff' stroke-width='1.8'/%3E%3Cellipse rx='37' ry='50'/%3E%3Cpath d='M-12 48L-4 76M12 48L4 76'/%3E%3Crect x='-6' y='76' width='12' height='68' rx='6' fill='%23f6e1e3'/%3E%3C/g%3E%3C/svg%3E");
-  }
-
-  /* Right panel: matching curves and a shuttlecock */
-  body::after {
-    right: 0;
-    background-position: right center;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 1000'%3E%3Cpath d='M430 710Q260 520 80 260Q230 500 430 710Z' fill='%23a78bfa' opacity='.23'/%3E%3Cpath d='M400 850Q200 620 -10 390Q210 590 400 850Z' fill='%23ff8cc4' opacity='.22'/%3E%3Cpath d='M420 480Q230 290 90 40Q250 280 420 480Z' fill='%2338b6f5' opacity='.18'/%3E%3Cpath d='M410 920Q230 710 20 300M370 590Q200 390 0 50' fill='none' stroke='%23a78bfa' stroke-width='3' stroke-linecap='round' opacity='.4'/%3E%3Cg transform='translate(270 890) rotate(-28)' stroke='%234a3470' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round' opacity='.68'%3E%3Cpath d='M-12 0L-38 -70Q0 -82 38 -70L12 0Z' fill='%23ffffff' fill-opacity='.8'/%3E%3Cpath d='M-7 0L-20 -72M0 0V-77M7 0L20 -72' fill='none' stroke-width='2.2'/%3E%3Cellipse cy='-71' rx='38' ry='7' fill='none'/%3E%3Ccircle cy='7' r='13' fill='%23f6e1e3'/%3E%3C/g%3E%3C/svg%3E");
-  }
-
-  .wrap {
-    position: relative;
-    z-index: 1;
+/* Decorative swirl background */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background:url("../images/frame.png") center / 100% 100% no-repeat;
+  pointer-events:none;
+}
+@media (max-width:700px){
+  body::before{
+    background:
+      url("../images/frame.png") left top / auto 55% no-repeat,
+      url("../images/frame.png") right bottom / auto 55% no-repeat;
   }
 }
