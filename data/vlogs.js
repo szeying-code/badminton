@@ -11,10 +11,42 @@
 // C) Nothing yet? Leave it with just a title and a play-button tile shows.
 //      { title: "Coming soon" },
 
+
 var VLOGS = [
-  { title: "Badminton Vlog 1", file: "Badminton Vlog 1_17102026.mp4", cover: "badminton vlog.png.jpeg", date: "17 Oct 2026" },
-  { title: "Sheffield Competition", file: "Sheffield Competition 28032025.MP4", cover: "Sheffield Competition.png.jpeg", date: "28 Mar 2026" },
-  { title: "All England Mini Vlog", file: "All England Mini Vlog 04032026.MP4", cover: "all_england.png.jpeg", date: "4 Mar 2026" },
-  { title: "Birmingham trip with Wei", file: "birmingham trip with wei_27092026.mp4", cover: "birmingham trip with wei_27092026.png.jpeg", date: "27 Sep 2026" },
-  { title: "Manchester Mgame 2026", file: "manchester_mgame_2026.mov", cover: "manchester_mgame_cover.jpg", date: "24 Oct 2026" }
+  {
+    title: "Badminton Vlog 1",
+    file: "Badminton Vlog 1_17102026.mp4",
+    cover: "badminton vlog.png.jpeg",
+    date: "17 Oct 2026",
+    category: "badminton"
+  },
+  {
+    title: "Sheffield Mgame 2026",
+    file: "Sheffield Competition 28032025.MP4",
+    cover: "Sheffield Competition.png.jpeg",
+    date: "28 Mar 2026",
+    category: "badminton"
+  },
+  {
+    title: "All England Mini Vlog",
+    file: "All England Mini Vlog 04032026.MP4",
+    cover: "all_england.png.jpeg",
+    date: "4 Mar 2026",
+    category: "trip"
+  },
+  {
+    title: "Birmingham trip with Wei",
+    file: "birmingham trip with wei_27092026.mp4",
+    cover: "birmingham trip with wei_27092026.png.jpeg",
+    date: "27 Sep 2026",
+    category: "trip"
+  },
+  {
+    title: "Manchester Mgame 2026",
+    file: "manchester_mgame_2026.mov",
+    cover: "manchester_mgame_cover.jpg",
+    date: "24 Oct 2026",
+    category: "badminton"
+  }
 ];
+
