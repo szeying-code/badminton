@@ -1,18 +1,19 @@
 
-/* Decorative swirl background */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  z-index:-1;
-  background:url("../images/frame.png") right center / 100% 100% no-repeat;
-  pointer-events:none;
+/* Decorative background: desktop only */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: url("../images/frame.png") right center / 100% 100% no-repeat;
+  pointer-events: none;
 }
 
-@media (max-width:700px){
-  body::before{
-    background:
-      url("../images/frame.png") right top / auto 55% no-repeat,
-      url("../images/frame.png") right bottom / auto 55% no-repeat;
+/* Hide decoration on phones and small screens */
+@media (max-width: 700px) {
+  body::before {
+    display: none;
+    background: none;
   }
 }
+
