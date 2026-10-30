@@ -55,7 +55,8 @@
   
   var lightboxImg = lightbox.querySelector("img");
   
-  $("moments").addEventListener("click", function (event) {
+  // Allow both galleries to enlarge photos
+  document.addEventListener("click", function (event) {
       var photo = event.target.closest(".clickable-photo");
   
       if (!photo) return;
