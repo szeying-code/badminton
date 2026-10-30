@@ -11,7 +11,6 @@ var MOMENTS = [
   { img: "kl_photo/sybc_friendly1.jpg", emoji: "🤝", caption: "Friendly Match 1 : Luis/Alice Group" },
   { img: "kl_photo/sybc_group_photo.jpg", emoji: "👥", caption: "SYBC Group Photo" },
   { img: "kl_photo/sybc_group_photo1.jpg", emoji: "👥", caption: "SYBC Group Photo 2" },
-  { img: "kl_photo/training.jpg", emoji: "🏸", caption: "Training Day" },
   { img: "kl_photo/verandobc.jpg", emoji: "📸", caption: "Friendly Match 3 : Verandobc" }
 ];
 var DESIGNS = [
