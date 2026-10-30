@@ -23,7 +23,7 @@ var VLOGS = [
   {
     title: "Sheffield Mgame 2026",
     file: "Sheffield Competition 28032025.MP4",
-    cover: "Sheffield Competition.jpeg",
+    cover: "Sheffield Competition.jpg",
     date: "28 Mar 2026",
     category: "badminton"
   },
