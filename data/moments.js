@@ -11,5 +11,14 @@ var MOMENTS = [
   { img: "selfie image.png", emoji: "📸", caption: "My Team" },
   { img: "", emoji: "😂", caption: "Funniest rally" },
   { img: "sheffiled competition medal.png.jpeg", emoji: "🥇", caption: "Winner pose" },
-  { img: "bobatea/matchaboba_chayan.jpg", emoji: "🧋", caption: "Bubble tea after play" }
+  { img: "bobatea/matchaboba_chayan.jpg", emoji: "🧋", caption: "Bubble tea after play" },
+  { img: "winner post/winnerpostsheffield.jpg", emoji: "🥇", caption: "Sheffield Mgame · winner pose" },
+  { img: "winner post/winnerpostsheffieldgroup.jpg", emoji: "🥇", caption: "Sheffield Mgame · group photo" },
+  { img: "winner post/manchester_medal.jpg", emoji: "🥈", caption: "Manchester Mgame · medal" },
+  { img: "winner post/winnerpostmanchester.jpg", emoji: "🥈", caption: "Manchester Mgame · winner pose" },
+  { img: "winner post/winnerpostmanchester1.jpg", emoji: "🥈", caption: "Manchester Mgame · winner pose 2" },
+  { img: "winner post/winnerpostmanchester2.jpg", emoji: "🥈", caption: "Manchester Mgame · winner pose 3" },
+  { img: "winner post/winnerpostmanchester3.jpg", emoji: "🥈", caption: "Manchester Mgame · winner pose 4" },
+  { img: "winner post/winnerpostmanchestergroup.jpg", emoji: "🥈", caption: "Manchester Mgame · group photo" },
+  { img: "winner post/winnerpostmanchestergroup1.jpg", emoji: "🥈", caption: "Manchester Mgame · group photo 2" }
 ];
