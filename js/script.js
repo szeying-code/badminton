@@ -84,7 +84,15 @@
           closePhotoLightbox();
       }
   });
-
+  
+  // Designs
+  $("design-gallery").innerHTML = DESIGNS.map(function (x) {
+    return '<figure class="pic"><img class="clickable-photo" src="images/' +
+      esc(x.img) + '" alt="' + esc(x.caption) +
+      '" loading="lazy"><figcaption>' + esc(x.caption) +
+      '</figcaption></figure>';
+  }).join("");
+  
   // Videos
 
   // Videos: render each video using the existing card design
