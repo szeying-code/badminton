@@ -37,12 +37,53 @@
   
   // Photos
   $("moments").innerHTML = MOMENTS.map(function (x) {
-    if (x.img) {
-      return '<figure class="pic"><img src="images/' + esc(x.img) + '" alt="' + esc(x.caption) +
-        '" loading="lazy"><figcaption>' + esc(x.caption) + "</figcaption></figure>";
-    }
-    return '<div class="ph"><i>' + esc(x.emoji || "📸") + "</i>" + esc(x.caption) + "</div>";
+      if (x.img) {
+        return '<figure class="pic"><img class="clickable-photo" src="images/' + esc(x.img) + '" alt="' + esc(x.caption) +
+          '" loading="lazy"><figcaption>' + esc(x.caption) + "</figcaption></figure>";
+      }
+      return '<div class="ph"><i>' + esc(x.emoji || "📸") + "</i>" + esc(x.caption) + "</div>";
   }).join("");
+  
+  // Photo lightbox
+  var lightbox = document.createElement("div");
+  lightbox.className = "photo-lightbox";
+  lightbox.innerHTML =
+      '<button class="photo-close" aria-label="Close">&times;</button>' +
+      '<img src="" alt="Enlarged photo">';
+  
+  document.body.appendChild(lightbox);
+  
+  var lightboxImg = lightbox.querySelector("img");
+  
+  $("moments").addEventListener("click", function (event) {
+      var photo = event.target.closest(".clickable-photo");
+  
+      if (!photo) return;
+  
+      lightboxImg.src = photo.src;
+      lightboxImg.alt = photo.alt;
+      lightbox.classList.add("active");
+      document.body.style.overflow = "hidden";
+  });
+  
+  function closePhotoLightbox() {
+      lightbox.classList.remove("active");
+      lightboxImg.src = "";
+      document.body.style.overflow = "";
+  }
+  
+  lightbox.addEventListener("click", function (event) {
+      if (event.target === lightbox ||
+          event.target.classList.contains("photo-close")) {
+          closePhotoLightbox();
+      }
+  });
+  
+  document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+          closePhotoLightbox();
+      }
+  });
 
   // Videos
 
