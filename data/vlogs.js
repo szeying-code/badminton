@@ -54,6 +54,13 @@ var VLOGS = [
     cover: "manchester_trip_with _sis_2026_cover.JPG",
     date: "24 Oct 2026",
     category: "trip"
+  },
+  {
+    title: "UK First Video",
+    file: "uk_first_video.MOV",
+    cover: "",
+    date: "21 Sep 2025",
+    category: "badminton"
   }
 ];
 
