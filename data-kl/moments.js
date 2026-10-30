@@ -4,6 +4,7 @@ var FRIENDLY_MATCHES = [
   { img: "kl_photo/verandobc.jpg", emoji: "📸", caption: "Friendly Match 3 : Verandobc" }
 ];
 var MOMENTS = [
+  { img: "kl_photo/mc alvin couple shirt.jpg", emoji: "📸", caption: "MC & Alvin couple shirt" },
   { img: "kl_photo/alvin shiloong.jpg", emoji: "📸", caption: "Alvin & Shiloong" },
   { img: "kl_photo/alvincake.jpg", emoji: "🎂", caption: "Cake time" },
   { img: "kl_photo/group_pic.jpg", emoji: "👥", caption: "KL Group Photo" },
