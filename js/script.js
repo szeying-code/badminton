@@ -98,6 +98,21 @@
     }).join("");
   }
   
+  // Friendly match videos - only display if this page has the container
+  var friendlyGallery = $("friendly-vlogs");
+  
+  if (friendlyGallery) {
+    friendlyGallery.innerHTML = VLOGS
+      .filter(function (v) {
+        return v.category === "friendly";
+      })
+      .sort(function (a, b) {
+        return toDate(b.date) - toDate(a.date);
+      })
+      .map(renderVideo)
+      .join("");
+  }
+  
   // Videos
 
   // Videos: render each video using the existing card design
