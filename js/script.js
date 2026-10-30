@@ -97,20 +97,17 @@
         '</figcaption></figure>';
     }).join("");
   }
+
+  // Friendly Match Photos
+  var friendlyMoments = $("friendly-moments");
   
-  // Friendly match videos - only display if this page has the container
-  var friendlyGallery = $("friendly-vlogs");
-  
-  if (friendlyGallery) {
-    friendlyGallery.innerHTML = VLOGS
-      .filter(function (v) {
-        return v.category === "friendly";
-      })
-      .sort(function (a, b) {
-        return toDate(b.date) - toDate(a.date);
-      })
-      .map(renderVideo)
-      .join("");
+  if (friendlyMoments && typeof FRIENDLY_MATCHES !== "undefined") {
+    friendlyMoments.innerHTML = FRIENDLY_MATCHES.map(function (x) {
+      return '<figure class="pic"><img class="clickable-photo" src="images/' +
+        esc(x.img) + '" alt="' + esc(x.caption) +
+        '" loading="lazy"><figcaption>' + esc(x.caption) +
+        '</figcaption></figure>';
+    }).join("");
   }
   
   // Videos
