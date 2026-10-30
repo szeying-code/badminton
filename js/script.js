@@ -86,13 +86,17 @@
       }
   });
   
-  // Designs
-  $("design-gallery").innerHTML = DESIGNS.map(function (x) {
-    return '<figure class="pic"><img class="clickable-photo" src="images/' +
-      esc(x.img) + '" alt="' + esc(x.caption) +
-      '" loading="lazy"><figcaption>' + esc(x.caption) +
-      '</figcaption></figure>';
-  }).join("");
+  // Designs - only render on pages that have a design gallery
+  var designGallery = $("design-gallery");
+  
+  if (designGallery && typeof DESIGNS !== "undefined") {
+    designGallery.innerHTML = DESIGNS.map(function (x) {
+      return '<figure class="pic"><img class="clickable-photo" src="images/' +
+        esc(x.img) + '" alt="' + esc(x.caption) +
+        '" loading="lazy"><figcaption>' + esc(x.caption) +
+        '</figcaption></figure>';
+    }).join("");
+  }
   
   // Videos
 
