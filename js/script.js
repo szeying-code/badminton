@@ -139,6 +139,17 @@
     return '<div class="vd"><i>▶</i>' + esc(v.title) + "</div>";
   }
 
+  // Friendly match videos (KL page only)
+  var friendlyGallery = $("friendly-vlogs");
+  
+  if (friendlyGallery) {
+    friendlyGallery.innerHTML = VLOGS
+      .filter(function (v) {
+        return v.category === "friendly";
+      })
+      .map(renderVideo)
+      .join("");
+  }
   
   // Badminton videos: newest first, oldest last
   $("vlogs").innerHTML = VLOGS
