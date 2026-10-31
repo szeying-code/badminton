@@ -167,47 +167,49 @@
     friendlyAll.innerHTML = friendlyPhotos.concat(friendlyVideos).join("");
   }
   
-  // Large friendly video popup
-  var friendlyModal = document.createElement("div");
-  friendlyModal.className = "friendly-video-modal";
-  friendlyModal.innerHTML =
-    '<button class="friendly-video-close">&times;</button>' +
-    '<video controls playsinline></video>';
+  // Large friendly video popup - KL page only
+  if (friendlyAll) {
+    var friendlyModal = document.createElement("div");
+    friendlyModal.className = "friendly-video-modal";
+    friendlyModal.innerHTML =
+      '<button class="friendly-video-close">&times;</button>' +
+      '<video controls playsinline></video>';
   
-  document.body.appendChild(friendlyModal);
+    document.body.appendChild(friendlyModal);
   
-  var popupVideo = friendlyModal.querySelector("video");
+    var popupVideo = friendlyModal.querySelector("video");
   
-  friendlyAll && friendlyAll.addEventListener("click", function (event) {
-    var playButton = event.target.closest(".friendly-play");
-    if (!playButton) return;
+    friendlyAll.addEventListener("click", function (event) {
+      var playButton = event.target.closest(".friendly-play");
+      if (!playButton) return;
   
-    var cardVideo = playButton.parentElement.querySelector("video");
+      var cardVideo = playButton.parentElement.querySelector("video");
   
-    popupVideo.src = cardVideo.src;
-    friendlyModal.classList.add("active");
-    document.body.style.overflow = "hidden";
-    popupVideo.play();
-  });
+      popupVideo.src = cardVideo.src;
+      friendlyModal.classList.add("active");
+      document.body.style.overflow = "hidden";
+      popupVideo.play();
+    });
   
-  function closeFriendlyVideo() {
-    popupVideo.pause();
-    popupVideo.removeAttribute("src");
-    popupVideo.load();
-    friendlyModal.classList.remove("active");
-    document.body.style.overflow = "";
-  }
-  
-  friendlyModal.addEventListener("click", function (event) {
-    if (event.target === friendlyModal ||
-        event.target.classList.contains("friendly-video-close")) {
-      closeFriendlyVideo();
+    function closeFriendlyVideo() {
+      popupVideo.pause();
+      popupVideo.removeAttribute("src");
+      popupVideo.load();
+      friendlyModal.classList.remove("active");
+      document.body.style.overflow = "";
     }
-  });
   
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") closeFriendlyVideo();
-  });
+    friendlyModal.addEventListener("click", function (event) {
+      if (event.target === friendlyModal ||
+          event.target.classList.contains("friendly-video-close")) {
+        closeFriendlyVideo();
+      }
+    });
+  
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") closeFriendlyVideo();
+    });
+  }
   // Badminton videos: newest first, oldest last
   var badmintonGallery = $("vlogs");
   
