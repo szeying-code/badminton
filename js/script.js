@@ -147,10 +147,59 @@
       .filter(function (v) {
         return v.category === "friendly";
       })
-      .map(renderVideo)
+      .map(function (v) {
+        return '<figure class="pic friendly-video-card">' +
+          '<video src="videos/' + esc(encodeURI(v.file)) +
+          '" muted autoplay loop playsinline preload="metadata"></video>' +
+          '<button class="friendly-play" type="button" aria-label="Play ' +
+          esc(v.title) + '">▶</button>' +
+          '<figcaption>' + esc(v.title) + '</figcaption>' +
+          '</figure>';
+      })
       .join("");
   }
   
+  // Large friendly video popup
+  var friendlyModal = document.createElement("div");
+  friendlyModal.className = "friendly-video-modal";
+  friendlyModal.innerHTML =
+    '<button class="friendly-video-close">&times;</button>' +
+    '<video controls playsinline></video>';
+  
+  document.body.appendChild(friendlyModal);
+  
+  var popupVideo = friendlyModal.querySelector("video");
+  
+  friendlyGallery && friendlyGallery.addEventListener("click", function (event) {
+    var playButton = event.target.closest(".friendly-play");
+    if (!playButton) return;
+  
+    var cardVideo = playButton.parentElement.querySelector("video");
+  
+    popupVideo.src = cardVideo.src;
+    friendlyModal.classList.add("active");
+    document.body.style.overflow = "hidden";
+    popupVideo.play();
+  });
+  
+  function closeFriendlyVideo() {
+    popupVideo.pause();
+    popupVideo.removeAttribute("src");
+    popupVideo.load();
+    friendlyModal.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+  
+  friendlyModal.addEventListener("click", function (event) {
+    if (event.target === friendlyModal ||
+        event.target.classList.contains("friendly-video-close")) {
+      closeFriendlyVideo();
+    }
+  });
+  
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") closeFriendlyVideo();
+  });
   // Badminton videos: newest first, oldest last
   $("vlogs").innerHTML = VLOGS
     .filter(function (v) {
