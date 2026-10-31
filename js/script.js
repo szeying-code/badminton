@@ -235,9 +235,9 @@
 
   
   // Trip videos: newest first, oldest last
-  $("trip-vlogs").innerHTML = VLOGS
+  $("vlogs").innerHTML = VLOGS
     .filter(function (v) {
-      return v.category === "trip";
+      return v.category !== "trip" && v.category !== "friendly";
     })
     .sort(function (a, b) {
       function toDate(date) {
