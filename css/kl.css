@@ -245,3 +245,22 @@ footer{text-align:center;color:var(--soft);margin:32px 0 16px}
   font-size: 45px;
   cursor: pointer;
 }
+
+/* Friendly Matches: keep photos and videos in the same grid */
+#friendly-moments,
+#friendly-vlogs {
+  display: contents;
+}
+
+.friendly-video-card {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+#friendly-moments,
+#friendly-vlogs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
