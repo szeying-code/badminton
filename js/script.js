@@ -178,7 +178,7 @@
   
   var popupVideo = friendlyModal.querySelector("video");
   
-  friendlyGallery && friendlyGallery.addEventListener("click", function (event) {
+  friendlyAll && friendlyAll.addEventListener("click", function (event) {
     var playButton = event.target.closest(".friendly-play");
     if (!playButton) return;
   
