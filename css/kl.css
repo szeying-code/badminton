@@ -180,3 +180,68 @@ footer{text-align:center;color:var(--soft);margin:32px 0 16px}
     right: 18px;
   }
 }
+
+/* Friendly match video cards */
+.friendly-video-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.friendly-video-card video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: inherit;
+  background: #222;
+}
+
+.friendly-play {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 58px;
+  height: 58px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(20, 30, 60, .8);
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* Large video popup */
+.friendly-video-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: rgba(0, 0, 0, .92);
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+}
+
+.friendly-video-modal.active {
+  display: flex;
+}
+
+.friendly-video-modal video {
+  max-width: 90vw;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.friendly-video-close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 45px;
+  cursor: pointer;
+}
