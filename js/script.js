@@ -139,11 +139,20 @@
     return '<div class="vd"><i>▶</i>' + esc(v.title) + "</div>";
   }
 
-  // Friendly match videos (KL page only)
-  var friendlyGallery = $("friendly-vlogs");
+  // All Friendly Matches in one grid
+  var friendlyAll = $("friendly-all");
   
-  if (friendlyGallery) {
-    friendlyGallery.innerHTML = VLOGS
+  if (friendlyAll) {
+    var friendlyPhotos = typeof FRIENDLY_MATCHES !== "undefined"
+      ? FRIENDLY_MATCHES.map(function (x) {
+          return '<figure class="pic"><img class="clickable-photo" src="images/' +
+            esc(x.img) + '" alt="' + esc(x.caption) +
+            '" loading="lazy"><figcaption>' + esc(x.caption) +
+            '</figcaption></figure>';
+        })
+      : [];
+  
+    var friendlyVideos = VLOGS
       .filter(function (v) {
         return v.category === "friendly";
       })
@@ -151,12 +160,11 @@
         return '<figure class="pic friendly-video-card">' +
           '<video src="videos/' + esc(encodeURI(v.file)) +
           '" muted autoplay loop playsinline preload="metadata"></video>' +
-          '<button class="friendly-play" type="button" aria-label="Play ' +
-          esc(v.title) + '">▶</button>' +
-          '<figcaption>' + esc(v.title) + '</figcaption>' +
-          '</figure>';
-      })
-      .join("");
+          '<button class="friendly-play" type="button">▶</button>' +
+          '<figcaption>' + esc(v.title) + '</figcaption></figure>';
+      });
+  
+    friendlyAll.innerHTML = friendlyPhotos.concat(friendlyVideos).join("");
   }
   
   // Large friendly video popup
