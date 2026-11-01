@@ -264,3 +264,61 @@ footer{text-align:center;color:var(--soft);margin:32px 0 16px}
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
 }
+
+/* Four-column team statistics */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* Match result backgrounds */
+.m.win {
+  background: #e1f3e8;
+  border-color: #b9dfc6;
+}
+
+.m.draw {
+  background: #eeeeee;
+  border-color: #d5d5d5;
+}
+
+.m.lose {
+  background: #f9e2e2;
+  border-color: #efc1c1;
+}
+
+/* Result badges */
+.tag.win {
+  background: #bce5ca;
+  color: #286b42;
+}
+
+.tag.draw {
+  background: #d9d9d9;
+  color: #555555;
+}
+
+.tag.lose {
+  background: #f0bebe;
+  color: #a33b3b;
+}
+
+/* Statistics colours */
+#stat-wins {
+  color: #36a875;
+}
+
+#stat-draws {
+  color: #858585;
+}
+
+#stat-losses {
+  color: #dc6868;
+}
+
+@media (max-width: 600px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
