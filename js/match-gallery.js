@@ -38,6 +38,103 @@
     ["images/kl_photo/match4_adhoc/huixin_tiffany_wd3.jpg", "Women's Doubles 3", "Huixin & Tiffany"]
   ]
   };
+
+  // Match line-ups and results
+  var matchLineups = {
+    1: {
+      md: [
+        ["Men's Doubles 1", "Huasheng & MC", "win"]
+      ],
+      wd: [
+        ["Women's Doubles 1", "SY & Joey", "lose"]
+      ],
+      xd: [
+        ["Mixed Doubles 1", "CheeWeng & ZY", "win"],
+        ["Mixed Doubles 2", "YC & Yishen", "win"],
+        ["Mixed Doubles 3", "Alvin & Jieyun", "lose"],
+        ["Mixed Doubles 4", "Jason & Huixin", "win"],
+        ["Mixed Doubles 5", "Jacklim & Chloe", "win"]
+      ]
+    },
+
+    2: {
+      md: [
+        ["Men's Doubles 1", "Shiloong & Shiuan", "lose"],
+        ["Men's Doubles 2", "Alvin & Jason", "lose"],
+        ["Men's Doubles 3", "Dabin & Ivern", "lose"],
+        ["Men's Doubles 4", "Qiang & Kenhooi", "lose"],
+        ["Men's Doubles 5", "MC & HS", "lose"],
+        ["Men's Doubles 6", "Wayne & Yoonghang", "win"]
+      ],
+      wd: [
+        ["Women's Doubles 1", "Jieyun & Huixin", "win"]
+      ],
+      xd: [
+        ["Mixed Doubles 1", "CW & ZY", "win"],
+        ["Mixed Doubles 2", "Yishen & YC", "win"],
+        ["Mixed Doubles 3", "Parry & SY", "win"]
+      ]
+    },
+
+    3: {
+      md: [
+        ["Men's Doubles 1", "Yishen & Sean Tan", "lose"],
+        ["Men's Doubles 2", "CW & Dabin", "lose"],
+        ["Men's Doubles 3", "Qiang & Kenhooi", "win"],
+        ["Men's Doubles 4", "Aikyuan & 一勇", "lose"],
+        ["Men's Doubles 5", "Alvin & Jason", "lose"],
+        ["Men's Doubles 6", "MC & HS", "lose"],
+        ["Men's Doubles 7", "Wayne & Wayne2", "win"],
+        ["Men's Doubles 8", "Brandon & Karming", "lose"]
+      ],
+      wd: [
+        ["Women's Doubles 1", "ZY & YC", "lose"],
+        ["Women's Doubles 2", "Jieyun & Huixin", "lose"]
+      ],
+      xd: [
+        ["Mixed Doubles 1", "SY & Yishen", "win"],
+        ["Mixed Doubles 2", "YC & CW", "win"]
+      ]
+    },
+
+    4: {
+      md: [
+        ["Men's Doubles 1", "Gary & DT", "lose"],
+        ["Men's Doubles 2", "Chee Weng & Hong Yee", "lose"],
+        ["Men's Doubles 3", "Kenhooi & Qi Cheng", "win"],
+        ["Men's Doubles 4", "Yishen & Dabin", "lose"],
+        ["Men's Doubles 5", "Wayne & Kelvin", "lose"],
+        ["Men's Doubles 6", "Alvin & Yong Yiu", "lose"],
+        ["Men's Doubles 7", "Huasheng & Sean Tan", "lose"]
+      ],
+      wd: [
+        ["Women's Doubles 1", "ZY & YC", "lose"],
+        ["Women's Doubles 2", "Jieyun & Apple", "lose"],
+        ["Women's Doubles 3", "Huixin & Tiffany", "lose"]
+      ],
+      xd: []
+    },
+
+    5: {
+      md: [
+        ["Men's Doubles 1", "W & Dabin", "lose"],
+        ["Men's Doubles 2", "Wayne & Kenhooi", "win"],
+        ["Men's Doubles 3", "Yishen & Aikyuan", "win"],
+        ["Men's Doubles 4", "Qiang & Alvin", "win"],
+        ["Men's Doubles 5", "Ivern & Sean Tan", "win"],
+        ["Men's Doubles 6", "MC & HS", "win"]
+      ],
+      wd: [
+        ["Women's Doubles 1", "ZY & YC", "win"],
+        ["Women's Doubles 2", "Jieyun & Huixin", "win"]
+      ],
+      xd: [
+        ["Mixed Doubles 1", "YC & Yishen", "win"],
+        ["Mixed Doubles 2", "ZY & W", "win"],
+        ["Mixed Doubles 3", "SY & Shiuan", "lose"]
+      ]
+    }
+  };
     
   var params = new URLSearchParams(window.location.search);
   var matchId = Number(params.get("id"));
@@ -63,6 +160,42 @@
   score.textContent = "Us " + match.us + " – " + match.them + " Them";
 
   var currentPhotos = matchPhotos[matchId] || [];
+
+  // Display compact match line-ups below photos
+  var lineupContainer = document.getElementById("match-lineups");
+  var currentLineup = matchLineups[matchId];
+  
+  if (lineupContainer && currentLineup) {
+    var categories = [
+      ["md", "🏸 Men's Doubles"],
+      ["wd", "🌸 Women's Doubles"],
+      ["xd", "💙 Mixed Doubles"]
+    ];
+  
+    lineupContainer.innerHTML = categories.map(function (category) {
+      var games = currentLineup[category[0]] || [];
+  
+      if (games.length === 0) return "";
+  
+      return (
+        '<section class="lineup-category">' +
+          '<h3>' + category[1] + '</h3>' +
+          '<div class="lineup-list">' +
+            games.map(function (game) {
+              return (
+                '<div class="lineup-row">' +
+                  '<span>' + game[0] + ' · ' + game[1] + '</span>' +
+                  '<span class="lineup-result ' + game[2] + '">' +
+                    game[2].toUpperCase() +
+                  '</span>' +
+                '</div>'
+              );
+            }).join("") +
+          '</div>' +
+        '</section>'
+      );
+    }).join("");
+  }
 
   if (currentPhotos.length === 0) {
     photos.innerHTML =
