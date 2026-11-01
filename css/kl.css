@@ -218,10 +218,10 @@ h2 {
   border-color: #b9dfc6;
 }
 
-/* Draw row */
+/* Draw row - light yellow */
 #match-log .m.draw {
-  background: #eeeeee;
-  border-color: #d5d5d5;
+  background: #fff8dc;
+  border-color: #f5df91;
 }
 
 /* Lose row */
