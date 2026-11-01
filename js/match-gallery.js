@@ -37,6 +37,8 @@
     ["images/kl_photo/match4_adhoc/jieyun_apple_wd2.jpg", "Women's Doubles 2", "Jieyun & Apple"],
     ["images/kl_photo/match4_adhoc/huixin_tiffany_wd3.jpg", "Women's Doubles 3", "Huixin & Tiffany"]
   ]
+  };
+    
   var params = new URLSearchParams(window.location.search);
   var matchId = Number(params.get("id"));
 
