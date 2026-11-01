@@ -200,3 +200,57 @@
     right: 5px;
   }
 }
+
+/* ===== MATCH LINE-UP ===== */
+.match-lineups {
+  margin-top: 30px;
+  margin-bottom: 35px;
+}
+
+.lineup-category {
+  margin-bottom: 22px;
+}
+
+.lineup-category h3 {
+  font-size: 1.05rem;
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+
+.lineup-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Clean lineup without blue boxes */
+.lineup-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 4px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  font-size: 0.88rem;
+}
+
+.lineup-result {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.lineup-result.win {
+  color: #21865b;
+  background: #dff5e9;
+}
+
+.lineup-result.lose {
+  color: #c94d58;
+  background: #fde5e7;
+}
