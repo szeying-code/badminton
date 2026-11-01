@@ -1,7 +1,10 @@
+
 var MATCHES = [
   {
     id: 1,
-    date: "Friendly Match 1",
+    date: "14 Dec 2024 (Sat)",
+    venue: "VSmash Subang",
+    time: "6:00–9:00 pm",
     opponent: "Luis/Alice Group",
     us: 6,
     them: 2,
@@ -9,7 +12,9 @@ var MATCHES = [
   },
   {
     id: 2,
-    date: "Friendly Match 2",
+    date: "22 Mar 2025 (Sat)",
+    venue: "USJ 23 Badminton Court",
+    time: "8:00–10:00 pm",
     opponent: "New Spirit",
     us: 5,
     them: 5,
@@ -17,7 +22,9 @@ var MATCHES = [
   },
   {
     id: 3,
-    date: "Friendly Match 3",
+    date: "26 Apr 2025 (Sat)",
+    venue: "VSmash Subang",
+    time: "8:00–10:30 pm",
     opponent: "Verandobc",
     us: 4,
     them: 8,
@@ -25,7 +32,9 @@ var MATCHES = [
   },
   {
     id: 4,
-    date: "Friendly Match 4",
+    date: "23 Jun 2025 (Mon)",
+    venue: "USJ 23 Badminton Court",
+    time: "9:00–11:00 pm",
     opponent: "Adhoc",
     us: 1,
     them: 9,
@@ -33,7 +42,9 @@ var MATCHES = [
   },
   {
     id: 5,
-    date: "Friendly Match 5",
+    date: "14 Aug 2025 (Thurs)",
+    venue: "VSmash Subang",
+    time: "9:00–11:00 pm",
     opponent: "Return-New Spirit",
     us: 9,
     them: 2,
