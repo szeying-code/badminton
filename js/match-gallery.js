@@ -4,33 +4,39 @@
 
   // Photos and captions for each match
   var matchPhotos = {
-    2: [
-      ["images/kl_photo/match2_newspirit/alvin_calwin_md2.jpg", "Men's Doubles 2", "Alvin & Calwin"],
-      ["images/kl_photo/match2_newspirit/cw_zy_xd1.jpg", "Mixed Doubles 1", "CW & ZY"],
-      ["images/kl_photo/match2_newspirit/dabin_ivern_md4.jpg", "Men's Doubles 4", "Dabin & Ivern"],
-      ["images/kl_photo/match2_newspirit/jieyun_huixin_wd2.jpg", "Women's Doubles 2", "Jieyun & Huixin"],
-      ["images/kl_photo/match2_newspirit/mc_huasheng_md5.jpg", "Men's Doubles 5", "MC & Huasheng"],
-      ["images/kl_photo/match2_newspirit/qiang_kenhooi_md3.jpg", "Men's Doubles 3", "Qiang & Kenhooi"],
-      ["images/kl_photo/match2_newspirit/shiloong_shiuan_md1.jpg", "Men's Doubles 1", "Shiloong & Shiuan"],
-      ["images/kl_photo/match2_newspirit/sy_parry_xd3.jpg", "Mixed Doubles 3", "SY & Parry"],
-      ["images/kl_photo/match2_newspirit/wayne_yoonghang_md6.jpg", "Men's Doubles 6", "Wayne & Yoonghang"],
-      ["images/kl_photo/match2_newspirit/yc_yishen_xd2.jpg", "Mixed Doubles 2", "YC & Yishen"]
-    ],
+  2: [
+    // Men's Doubles
+    ["images/kl_photo/match2_newspirit/shiloong_shiuan_md1.jpg", "Men's Doubles 1", "Shiloong & Shiuan"],
+    ["images/kl_photo/match2_newspirit/alvin_calwin_md2.jpg", "Men's Doubles 2", "Alvin & Calwin"],
+    ["images/kl_photo/match2_newspirit/qiang_kenhooi_md3.jpg", "Men's Doubles 3", "Qiang & Kenhooi"],
+    ["images/kl_photo/match2_newspirit/dabin_ivern_md4.jpg", "Men's Doubles 4", "Dabin & Ivern"],
+    ["images/kl_photo/match2_newspirit/mc_huasheng_md5.jpg", "Men's Doubles 5", "MC & Huasheng"],
+    ["images/kl_photo/match2_newspirit/wayne_yoonghang_md6.jpg", "Men's Doubles 6", "Wayne & Yoonghang"],
+  
+    // Women's Doubles
+    ["images/kl_photo/match2_newspirit/jieyun_huixin_wd2.jpg", "Women's Doubles 2", "Jieyun & Huixin"],
+  
+    // Mixed Doubles
+    ["images/kl_photo/match2_newspirit/cw_zy_xd1.jpg", "Mixed Doubles 1", "CW & ZY"],
+    ["images/kl_photo/match2_newspirit/yc_yishen_xd2.jpg", "Mixed Doubles 2", "YC & Yishen"],
+    ["images/kl_photo/match2_newspirit/sy_parry_xd3.jpg", "Mixed Doubles 3", "SY & Parry"]
+  ],
 
-    4: [
-      ["images/kl_photo/match4_adhoc/alvin_yongyiu_md6.jpg", "Men's Doubles 6", "Alvin & Yong Yiu"],
-      ["images/kl_photo/match4_adhoc/cheeweng_hongyee_md2.jpg", "Men's Doubles 2", "Chee Weng & Hong Yee"],
-      ["images/kl_photo/match4_adhoc/gary_dt_md1.jpg", "Men's Doubles 1", "Gary & DT"],
-      ["images/kl_photo/match4_adhoc/huasheng_seantan_md7.jpg", "Men's Doubles 7", "Huasheng & Sean Tan"],
-      ["images/kl_photo/match4_adhoc/huixin_tiffany_wd3.jpg", "Women's Doubles 3", "Huixin & Tiffany"],
-      ["images/kl_photo/match4_adhoc/jieyun_apple_wd2.jpg", "Women's Doubles 2", "Jieyun & Apple"],
-      ["images/kl_photo/match4_adhoc/kenhooi_qicheng_md3.jpg", "Men's Doubles 3", "Kenhooi & Qi Cheng"],
-      ["images/kl_photo/match4_adhoc/wayne_kelvin_md5.jpg", "Men's Doubles 5", "Wayne & Kelvin"],
-      ["images/kl_photo/match4_adhoc/yishen_dabin_md4.jpg", "Men's Doubles 4", "Yishen & Dabin"],
-      ["images/kl_photo/match4_adhoc/zy_yc_wd1.jpg", "Women's Doubles 1", "ZY & YC"]
-    ]
-  };
-
+  4: [
+    // Men's Doubles
+    ["images/kl_photo/match4_adhoc/gary_dt_md1.jpg", "Men's Doubles 1", "Gary & DT"],
+    ["images/kl_photo/match4_adhoc/cheeweng_hongyee_md2.jpg", "Men's Doubles 2", "Chee Weng & Hong Yee"],
+    ["images/kl_photo/match4_adhoc/kenhooi_qicheng_md3.jpg", "Men's Doubles 3", "Kenhooi & Qi Cheng"],
+    ["images/kl_photo/match4_adhoc/yishen_dabin_md4.jpg", "Men's Doubles 4", "Yishen & Dabin"],
+    ["images/kl_photo/match4_adhoc/wayne_kelvin_md5.jpg", "Men's Doubles 5", "Wayne & Kelvin"],
+    ["images/kl_photo/match4_adhoc/alvin_yongyiu_md6.jpg", "Men's Doubles 6", "Alvin & Yong Yiu"],
+    ["images/kl_photo/match4_adhoc/huasheng_seantan_md7.jpg", "Men's Doubles 7", "Huasheng & Sean Tan"],
+  
+    // Women's Doubles
+    ["images/kl_photo/match4_adhoc/zy_yc_wd1.jpg", "Women's Doubles 1", "ZY & YC"],
+    ["images/kl_photo/match4_adhoc/jieyun_apple_wd2.jpg", "Women's Doubles 2", "Jieyun & Apple"],
+    ["images/kl_photo/match4_adhoc/huixin_tiffany_wd3.jpg", "Women's Doubles 3", "Huixin & Tiffany"]
+  ]
   var params = new URLSearchParams(window.location.search);
   var matchId = Number(params.get("id"));
 
