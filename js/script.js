@@ -50,7 +50,7 @@
   var rows = "";
 
   if (hasData("MATCHES")) {
-    MATCHES.forEach(function (m) {
+    MATCHES.forEach(function (m, matchIndex)) {
       if (m.result) {
         rows +=
           '<div class="m">' +
@@ -82,13 +82,14 @@
         "We lost 💪";
 
       rows +=
-        '<div class="m ' + result + '">' +
+        '<a href="match.html?id=' + (matchIndex + 1) +
+        '" class="m ' + result + ' match-link">' +
           '<div><span>' + esc(m.date) + " · " + esc(m.opponent) +
           '</span><br><span class="tag ' + result + '">' +
           label + '</span></div>' +
           '<div class="sc">Us ' + esc(m.us) +
           " – " + esc(m.them) + ' Them</div>' +
-        '</div>';
+        '</a>';
     });
   }
 
