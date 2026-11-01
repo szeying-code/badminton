@@ -52,7 +52,13 @@
   var isKlPage = !!$("friendly-all");
 
   if (hasData("MATCHES")) {
-    MATCHES.forEach(function (m, matchIndex) {
+    MATCHES.slice().sort(function (a, b) {
+      function getDate(date) {
+        return new Date(date.replace(/\s*\([^)]*\)/, ""));
+      }
+    
+      return getDate(b.date) - getDate(a.date);
+    }).forEach(function (m, matchIndex) {
 
       // Competition matches (UK)
       if (m.result) {
