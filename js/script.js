@@ -49,8 +49,12 @@
   var games = 0;
   var rows = "";
 
+  var isKlPage = !!$("friendly-all");
+
   if (hasData("MATCHES")) {
-    MATCHES.forEach(function (m, matchIndex)) {
+    MATCHES.forEach(function (m, matchIndex) {
+
+      // Competition matches (UK)
       if (m.result) {
         rows +=
           '<div class="m">' +
@@ -81,15 +85,25 @@
         result === "draw" ? "Draw 🤝" :
         "We lost 💪";
 
-      rows +=
-        '<a href="match.html?id=' + (matchIndex + 1) +
-        '" class="m ' + result + ' match-link">' +
-          '<div><span>' + esc(m.date) + " · " + esc(m.opponent) +
-          '</span><br><span class="tag ' + result + '">' +
-          label + '</span></div>' +
-          '<div class="sc">Us ' + esc(m.us) +
-          " – " + esc(m.them) + ' Them</div>' +
-        '</a>';
+      var matchContent =
+        '<div><span>' + esc(m.date) + " · " + esc(m.opponent) +
+        '</span><br><span class="tag ' + result + '">' +
+        label + '</span></div>' +
+        '<div class="sc">Us ' + esc(m.us) +
+        " – " + esc(m.them) + ' Them</div>';
+
+      if (isKlPage) {
+        rows +=
+          '<a href="match.html?id=' + (m.id || matchIndex + 1) +
+          '" class="m ' + result + ' match-link">' +
+          matchContent +
+          '</a>';
+      } else {
+        rows +=
+          '<div class="m ' + result + '">' +
+          matchContent +
+          '</div>';
+      }
     });
   }
 
