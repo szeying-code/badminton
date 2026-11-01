@@ -23,11 +23,18 @@
       return;
     }
     var won = m.us > m.them;
+    var draw = m.us === m.them;
+    
     games++;
-    if (won) wins++; else losses++;
+    
+    if (won) {
+      wins++;
+    } else if (!draw) {
+      losses++;
+    }
     rows += '<div class="m"><div><span>' + esc(m.date) + " · " + esc(m.opponent) +
-      '</span><br><span class="tag' + (won ? "" : " s") + '">' +
-      (won ? "We won 🎉" : "We lost 💪") + '</span></div>' +
+      '</span><br><span class="tag' + (!won && !draw ? " s" : "") + '">' +
+      (won ? "We won 🎉" : draw ? "Draw 🤝" : "We lost 💪") + '</span></div>' +
       '<div class="sc">Us ' + esc(m.us) + " – " + esc(m.them) + " Them</div></div>";
   });
   $("stat-games").textContent = games;
