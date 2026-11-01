@@ -17,7 +17,7 @@
     ["images/kl_photo/match2_newspirit/jieyun_huixin_wd2.jpg", "Women's Doubles 2", "Jieyun & Huixin"],
   
     // Mixed Doubles
-    ["images/kl_photo/match2_newspirit/cw_zy_xd1.jpg", "Mixed Doubles 1", "CW & ZY"],
+    ["images/kl_photo/match2_newspirit/cw_zy_xd1.jpg", "Mixed Doubles 1", "CheeWeng & ZY"],
     ["images/kl_photo/match2_newspirit/yc_yishen_xd2.jpg", "Mixed Doubles 2", "YC & Yishen"],
     ["images/kl_photo/match2_newspirit/sy_parry_xd3.jpg", "Mixed Doubles 3", "SY & Parry"]
   ],
