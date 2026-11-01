@@ -70,7 +70,7 @@
         ["Women's Doubles 1", "Jieyun & Huixin", "win"]
       ],
       xd: [
-        ["Mixed Doubles 1", "CW & ZY", "win"],
+        ["Mixed Doubles 1", "CheeWeng & ZY", "win"],
         ["Mixed Doubles 2", "Yishen & YC", "win"],
         ["Mixed Doubles 3", "Parry & SY", "win"]
       ]
@@ -84,7 +84,7 @@
         ["Men's Doubles 4", "Aikyuan & 一勇", "lose"],
         ["Men's Doubles 5", "Alvin & Jason", "lose"],
         ["Men's Doubles 6", "MC & HS", "lose"],
-        ["Men's Doubles 7", "Wayne & Wayne2", "win"],
+        ["Men's Doubles 7", "Wayne & Kelvin", "win"],
         ["Men's Doubles 8", "Brandon & Karming", "lose"]
       ],
       wd: [
@@ -93,7 +93,7 @@
       ],
       xd: [
         ["Mixed Doubles 1", "SY & Yishen", "win"],
-        ["Mixed Doubles 2", "YC & CW", "win"]
+        ["Mixed Doubles 2", "YC & CheeWeng", "win"]
       ]
     },
 
@@ -117,7 +117,7 @@
 
     5: {
       md: [
-        ["Men's Doubles 1", "W & Dabin", "lose"],
+        ["Men's Doubles 1", "CheeWeng & Dabin", "lose"],
         ["Men's Doubles 2", "Wayne & Kenhooi", "win"],
         ["Men's Doubles 3", "Yishen & Aikyuan", "win"],
         ["Men's Doubles 4", "Qiang & Alvin", "win"],
@@ -130,7 +130,7 @@
       ],
       xd: [
         ["Mixed Doubles 1", "YC & Yishen", "win"],
-        ["Mixed Doubles 2", "ZY & W", "win"],
+        ["Mixed Doubles 2", "ZY & CheeWeng", "win"],
         ["Mixed Doubles 3", "SY & Shiuan", "lose"]
       ]
     }
