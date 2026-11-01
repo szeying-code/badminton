@@ -14,7 +14,7 @@
   $("club-footer").textContent = CLUB.footer;
 
   // Team record + match log
-  var wins = 0, draws = 0, losses = 0, games = 0, rows = "";
+  var wins = 0, losses = 0, draws = 0, games = 0, rows = "";
   
   MATCHES.forEach(function (m) {
     if (m.result) {
@@ -30,19 +30,23 @@
     var resultClass = won ? "win" : draw ? "draw" : "lose";
   
     games++;
+
+    var result;
+    if (m.us > m.them) {
+      wins++;
+      result = "win";
+    } else if (m.us < m.them) {
+      losses++;
+      result = "lose";
+    } else {
+      draws++;
+      result = "draw";
+    }
   
-    if (won) wins++;
-    else if (draw) draws++;
-    else losses++;
-  
-    rows += '<div class="m ' + resultClass + '">' +
-      '<div><span>' + esc(m.date) + " · " + esc(m.opponent) +
-      '</span><br><span class="tag ' + resultClass + '">' +
-      (won ? "We won 🎉" : draw ? "Draw 🤝" : "We lost 💪") +
-      '</span></div>' +
-      '<div class="sc">Us ' + esc(m.us) + " – " + esc(m.them) +
-      " Them</div></div>";
-  });
+  '<span class="tag ' + result + '">' +
+    (result === "win" ? "We won 🎉" :
+     result === "draw" ? "Draw 🤝" : "We lost 💪") +
+  '</span></div>' +
   
   $("stat-games").textContent = games;
   $("stat-wins").textContent = wins;
