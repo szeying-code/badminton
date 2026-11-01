@@ -78,8 +78,9 @@
 }
 
 .photo-caption strong {
-  font-size: 1rem;
+  font-size: 0.85rem;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .photo-caption span {
