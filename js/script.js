@@ -86,9 +86,14 @@
         "We lost 💪";
 
       var matchContent =
-        '<div><span>' + esc(m.date) + " · " + esc(m.opponent) +
-        '</span><br><span class="tag ' + result + '">' +
-        label + '</span></div>' +
+        '<div>' +
+          '<span>' + esc(m.date) +
+          ' · ' + esc(m.venue || '') +
+          ' · ' + esc(m.time || '') +
+          '</span><br>' +
+          '<span class="tag ' + result + '">' +
+          label + '</span>' +
+        '</div>' +
         '<div class="sc">Us ' + esc(m.us) +
         " – " + esc(m.them) + ' Them</div>';
 
