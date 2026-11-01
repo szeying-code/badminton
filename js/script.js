@@ -87,11 +87,13 @@
 
       var matchContent =
         '<div>' +
-          '<span>' + esc(m.date) +
-          ' · ' + esc(m.venue || '') +
-          ' · ' + esc(m.time || '') +
-          '</span><br>' +
-          '<span class="tag ' + result + '">' +
+          '<strong>' + esc(m.opponent) + '</strong>' +
+          '<br><small class="match-details">' +
+            esc(m.date) + ' · ' +
+            esc(m.venue || '') + ' · ' +
+            esc(m.time || '') +
+          '</small>' +
+          '<br><span class="tag ' + result + '">' +
           label + '</span>' +
         '</div>' +
         '<div class="sc">Us ' + esc(m.us) +
