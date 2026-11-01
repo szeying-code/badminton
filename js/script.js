@@ -18,8 +18,8 @@
 
   MATCHES.forEach(function (m) {
     if (m.result) {
-      rows += '<div class="m"><div><span>' +
-        esc(m.date) + " · " + esc(m.opponent) +
+      rows += '<div class="m">' +
+        '<div><span>' + esc(m.date) + " · " + esc(m.opponent) +
         '</span><br><span class="tag">Competition</span></div>' +
         '<div class="sc">' + esc(m.result) + '</div></div>';
       return;
@@ -27,40 +27,38 @@
 
     games++;
 
-    var result, label;
+    var resultClass, resultText;
 
     if (m.us > m.them) {
       wins++;
-      result = "win";
-      label = "We won 🎉";
+      resultClass = "win";
+      resultText = "We won 🎉";
     } else if (m.us < m.them) {
       losses++;
-      result = "lose";
-      label = "We lost 💪";
+      resultClass = "lose";
+      resultText = "We lost 💪";
     } else {
       draws++;
-      result = "draw";
-      label = "Draw 🤝";
+      resultClass = "draw";
+      resultText = "Draw 🤝";
     }
 
-    rows += '<div class="m"><div><span>' +
-      esc(m.date) + " · " + esc(m.opponent) +
-      '</span><br><span class="tag ' + result + '">' +
-      label + '</span></div>' +
-      '<div class="sc">Us ' + esc(m.us) +
-      ' – ' + esc(m.them) + ' Them</div></div>';
+    rows += '<div class="m match-' + resultClass + '">' +
+      '<div><span>' + esc(m.date) + " · " + esc(m.opponent) +
+      '</span><br><span class="tag ' + resultClass + '">' +
+      resultText + '</span></div>' +
+      '<div class="sc">Us ' + esc(m.us) + ' – ' +
+      esc(m.them) + ' Them</div></div>';
   });
 
-  // Update team statistics
   $("stat-games").textContent = games;
   $("stat-wins").textContent = wins;
   $("stat-draws").textContent = draws;
   $("stat-losses").textContent = losses;
 
-  // Update match log
   $("match-log").innerHTML = rows ||
     "<span>No games yet. Add one in data/matches.js 🏸</span>";
-
+  
   // Photos
   $("moments").innerHTML = MOMENTS.map(function (x) {
       if (x.img) {
