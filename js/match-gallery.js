@@ -198,14 +198,17 @@
   }
 
   if (currentPhotos.length === 0) {
-    photos.innerHTML =
-      '<div class="match-empty">' +
-        '<div>📸</div>' +
-        '<h3>Photos coming soon!</h3>' +
-        '<p>We are preparing our match memories. Stay tuned! 💙</p>' +
-      '</div>';
-    return;
-  }
+    photos.innerHTML = "";
+  
+    var lineupSection = document.getElementById("match-lineups");
+  
+    if (lineupSection) {
+      lineupSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  } 
 
   // Display photos with captions
   photos.innerHTML = currentPhotos.map(function (photo, index) {
