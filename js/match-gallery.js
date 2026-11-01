@@ -200,15 +200,27 @@
   if (currentPhotos.length === 0) {
     photos.innerHTML = "";
   
+    var photosHeading = document.getElementById("photos-heading");
+    if (photosHeading) {
+      photosHeading.style.display = "none";
+    }
+  
     var lineupSection = document.getElementById("match-lineups");
   
     if (lineupSection) {
-      lineupSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
+      setTimeout(function () {
+        lineupSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }, 100);
     }
-  } 
+  } else {
+    var photosHeading = document.getElementById("photos-heading");
+    if (photosHeading) {
+      photosHeading.style.display = "";
+    }
+  }
 
   // Display photos with captions
   photos.innerHTML = currentPhotos.map(function (photo, index) {
