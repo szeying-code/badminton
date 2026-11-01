@@ -14,33 +14,43 @@
   $("club-footer").textContent = CLUB.footer;
 
   // Team record + match log
-  var wins = 0, losses = 0, games = 0, rows = "";
+  var wins = 0, draws = 0, losses = 0, games = 0, rows = "";
+  
   MATCHES.forEach(function (m) {
     if (m.result) {
-      rows += '<div class="m"><div><span>' + esc(m.date) + " · " + esc(m.opponent) +
+      rows += '<div class="m">' +
+        '<div><span>' + esc(m.date) + " · " + esc(m.opponent) +
         '</span><br><span class="tag">Competition</span></div>' +
         '<div class="sc">' + esc(m.result) + "</div></div>";
       return;
     }
+  
     var won = m.us > m.them;
     var draw = m.us === m.them;
-    
+    var resultClass = won ? "win" : draw ? "draw" : "lose";
+  
     games++;
-    
-    if (won) {
-      wins++;
-    } else if (!draw) {
-      losses++;
-    }
-    rows += '<div class="m"><div><span>' + esc(m.date) + " · " + esc(m.opponent) +
-      '</span><br><span class="tag' + (!won && !draw ? " s" : "") + '">' +
-      (won ? "We won 🎉" : draw ? "Draw 🤝" : "We lost 💪") + '</span></div>' +
-      '<div class="sc">Us ' + esc(m.us) + " – " + esc(m.them) + " Them</div></div>";
+  
+    if (won) wins++;
+    else if (draw) draws++;
+    else losses++;
+  
+    rows += '<div class="m ' + resultClass + '">' +
+      '<div><span>' + esc(m.date) + " · " + esc(m.opponent) +
+      '</span><br><span class="tag ' + resultClass + '">' +
+      (won ? "We won 🎉" : draw ? "Draw 🤝" : "We lost 💪") +
+      '</span></div>' +
+      '<div class="sc">Us ' + esc(m.us) + " – " + esc(m.them) +
+      " Them</div></div>";
   });
+  
   $("stat-games").textContent = games;
   $("stat-wins").textContent = wins;
+  $("stat-draws").textContent = draws;
   $("stat-losses").textContent = losses;
-  $("match-log").innerHTML = rows || "<span>No games yet. Add one in data/matches.js 🏸</span>";
+  
+  $("match-log").innerHTML = rows ||
+    "<span>No games yet. Add one in data/matches.js 🏸</span>";
   
   // Photos
   $("moments").innerHTML = MOMENTS.map(function (x) {
