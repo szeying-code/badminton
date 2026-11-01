@@ -322,3 +322,46 @@ footer{text-align:center;color:var(--soft);margin:32px 0 16px}
     grid-template-columns: repeat(2, 1fr);
   }
 }
+/* Four statistics in one row */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* Remove the purple outer match-log box */
+#match-log {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Keep individual match cards coloured */
+#match-log .m {
+  margin-bottom: 10px;
+  border-radius: 16px;
+  padding: 18px;
+  border: 1px solid transparent;
+}
+
+#match-log .m.win {
+  background: #e1f3e8;
+  border-color: #b9dfc6;
+}
+
+#match-log .m.draw {
+  background: #eeeeee;
+  border-color: #d5d5d5;
+}
+
+#match-log .m.lose {
+  background: #f9e2e2;
+  border-color: #efc1c1;
+}
+
+@media (max-width: 600px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
