@@ -232,10 +232,10 @@
   padding: 8px 10px;
   background: transparent;
   border: none;
-  border-bottom: 1px solid var(--line);
   border-radius: 0;
   font-size: 0.88rem;
   color: #222222;
+  margin-bottom: 0;
 }
 
 /* WIN / LOSE label */
