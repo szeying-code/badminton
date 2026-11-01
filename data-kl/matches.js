@@ -24,9 +24,11 @@ var MATCHES = [
     them: 9
   },
   {
+    id: 5,
     date: "Friendly Match 5",
     opponent: "Return-New Spirit",
     us: 9,
-    them: 2
+    them: 2,
+    photos: []
   }
 ];
