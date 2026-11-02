@@ -132,9 +132,27 @@
         ["Mixed Doubles 1", "YC & Yishen", "win"],
         ["Mixed Doubles 2", "ZY & CheeWeng", "win"],
         ["Mixed Doubles 3", "SY & Shiuan", "lose"]
-      ]
+      ],
+      opponent: {
+        md: [
+          "Qk / SS",
+          "Soon / Sam",
+          "Yue Shen / Louis",
+          "Lee / Darren",
+          "JH / Darren Chua",
+          "Lionel / Adward"
+        ],
+        xd: [
+          "Ivan / Penny",
+          "Alvin / Irene",
+          "CX / SH"
+        ],
+        wd: [
+          "Elly / Penny",
+          "YT / SX"
+        ]
+      }
     }
-  };
     
   var params = new URLSearchParams(window.location.search);
   var matchId = Number(params.get("id"));
