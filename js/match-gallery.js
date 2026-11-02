@@ -43,18 +43,35 @@
   var matchLineups = {
     1: {
       md: [
-        ["Men's Doubles 1", "Huasheng & MC", "win"]
+        ["Men's Doubles 1", "Hua Sheng & Min Chen", "win"],
+        ["Men's Doubles 2", "Alex & Chee Weng", "win"]
       ],
       wd: [
-        ["Women's Doubles 1", "SY & Joey", "lose"]
+        ["Women's Doubles 1", "Sze Ying & Joey", "lose"]
       ],
       xd: [
-        ["Mixed Doubles 1", "CheeWeng & ZY", "win"],
-        ["Mixed Doubles 2", "YC & Yishen", "win"],
-        ["Mixed Doubles 3", "Alvin & Jieyun", "lose"],
-        ["Mixed Doubles 4", "Jason & Huixin", "win"],
-        ["Mixed Doubles 5", "Jacklim & Chloe", "win"]
-      ]
+        ["Mixed Doubles 1", "Zhi Ying & Chee Weng", "win"],
+        ["Mixed Doubles 2", "Yin Chien & Yi Shen", "win"],
+        ["Mixed Doubles 3", "Jie Yun & Alvin", "lose"],
+        ["Mixed Doubles 4", "Chloe & Jack", "win"],
+        ["Mixed Doubles 5", "Hui Xin & Jason", "win"]
+      ],
+      opponent: {
+        md: [
+          "Soon Hao & Kai Liang",
+          "JX & Yan Ler"
+        ],
+        xd: [
+          "Darren & Alice",
+          "Hansen & QH",
+          "Jay Lun & Maruko",
+          "Andrew & QH",
+          "JK & Alice"
+        ],
+        wd: [
+          "CY & Audrey"
+        ]
+      }
     },
 
     2: {
