@@ -153,7 +153,8 @@
         ]
       }
     }
-    
+  };    
+  
   var params = new URLSearchParams(window.location.search);
   var matchId = Number(params.get("id"));
 
