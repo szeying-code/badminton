@@ -131,7 +131,24 @@
         ["Women's Doubles 2", "Jieyun & Apple", "lose"],
         ["Women's Doubles 3", "Huixin & Tiffany", "lose"]
       ],
-      xd: []
+      xd: [],
+      opponent: {
+        md: [
+          "Edmund Teh / Tan Fu Tzen",
+          "Tan Kian An / Lok Hong Wei",
+          "Horlick / Lee Wei Luen",
+          "Tee Siang Lun / Simon",
+          "Ivan Wong / Ng Jie Wenn",
+          "Ng Eng Kian / Yam Sik Hao",
+          "Ron Hong / YongV"
+        ],
+        wd: [
+          "Anna / Sam",
+          "Angeline / Janice",
+          "Sharon / Vincy"
+        ],
+        xd: []
+      }
     },
 
     5: {
