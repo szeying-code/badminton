@@ -182,27 +182,37 @@
   // Display compact match line-ups below photos
   var lineupContainer = document.getElementById("match-lineups");
   var currentLineup = matchLineups[matchId];
-  
+
   if (lineupContainer && currentLineup) {
     var categories = [
       ["md", "🏸 Men's Doubles"],
       ["wd", "🌸 Women's Doubles"],
       ["xd", "💙 Mixed Doubles"]
     ];
-  
+
     lineupContainer.innerHTML = categories.map(function (category) {
       var games = currentLineup[category[0]] || [];
-  
+      var opponentGames = currentLineup.opponent
+        ? currentLineup.opponent[category[0]] || []
+        : [];
+
       if (games.length === 0) return "";
-  
+
       return (
         '<section class="lineup-category">' +
           '<h3>' + category[1] + '</h3>' +
           '<div class="lineup-list">' +
-            games.map(function (game) {
+            games.map(function (game, index) {
+              var opponentName = opponentGames[index];
+
               return (
                 '<div class="lineup-row">' +
-                  '<span>' + game[0] + ' · ' + game[1] + '</span>' +
+                  '<span>' +
+                    game[0] + ' · ' + game[1] +
+                    (opponentName
+                      ? '<br><small>vs ' + opponentName + '</small>'
+                      : '') +
+                  '</span>' +
                   '<span class="lineup-result ' + game[2] + '">' +
                     game[2].toUpperCase() +
                   '</span>' +
