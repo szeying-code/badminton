@@ -94,7 +94,26 @@
       xd: [
         ["Mixed Doubles 1", "SY & Yishen", "win"],
         ["Mixed Doubles 2", "YC & CheeWeng", "win"]
-      ]
+      ],
+      opponent: {
+        md: [
+          "Xiang & Kuen",
+          "Pey Harng & CC",
+          "RZ & Davven",
+          "CK & Geap",
+          "CJ & Simon",
+          "Jayden & Jeng Tung",
+          "Ivan & Wybert"
+        ],
+        xd: [
+          "Kuen & Sany",
+          "Thye & Janice"
+        ],
+        wd: [
+          "Sany & Samantha",
+          "Sharon & Edna"
+        ]
+      }
     },
 
     4: {
