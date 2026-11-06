@@ -98,3 +98,9 @@
 
   window.Lightbox = { open: open, close: close };
 })();
+// Makes photo buttons look like plain photos (no extra frame)
+(function () {
+  var st = document.createElement("style");
+  st.textContent = ".pic-btn{display:block !important;width:100% !important;margin:0 !important;padding:0 !important;border:0 !important;border-radius:0 !important;background:none !important;box-shadow:none !important;cursor:zoom-in;font:inherit;color:inherit;line-height:0;}";
+  document.head.appendChild(st);
+})();
