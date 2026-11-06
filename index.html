@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Avacado BC 🏸</title>
+<meta name="description" content="Two sisters · one team · lots of smiles">
 <meta property="og:title" content="Avacado BC 🏸">
 <meta property="og:description" content="Two sisters · one team · lots of smiles">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏸</text></svg>">
@@ -13,45 +14,44 @@
 </head>
 <body>
 <div class="wrap">
-  <nav class="switch">
-    <a class="on" href="index.html">🇬🇧 UK</a>
-    <a href="kl.html">🇲🇾 Malaysia KL</a>
-  </nav>
-  
-  <!-- Banner (text comes from data/club.js) -->
-  <header class="hero">
-    <img class="hero-img" src="images/Kawaii%20Avocado%20Badminton%20Match.png" alt="Avacado BC avocados playing badminton">
-    <h1 id="club-name"></h1>
-    <p id="club-tagline"></p>
-  </header>
 
-  <!-- Team record (calculated from data/matches.js) -->
-  <!-- <h2>Our team record</h2>-->
-  <!-- <div class="card"><div class="vs">-->
-  <h2 style="display:none">Our team record</h2>
-  <div class="card" style="display:none"><div class="vs">
-    <div><b id="stat-games">0</b><small>games</small></div>
-    <div><b id="stat-wins">0</b><small>wins</small></div>
-    <div><b id="stat-losses">0</b><small>losses</small></div>
-  </div></div>
+<nav class="switch" aria-label="Choose country">
+<a class="on" href="index.html" aria-current="page">🇬🇧 UK</a>
+<a href="kl.html">🇲🇾 Malaysia KL</a>
+</nav>
 
-  <!-- Match log (from data/matches.js) -->
-  <h2>Achievement</h2>
-  <div class="card" id="match-log"></div>
+<!-- Banner (text comes from data/club.js) -->
+<header class="hero">
+<img class="hero-img" src="images/Kawaii%20Avocado%20Badminton%20Match.png" alt="Avacado BC avocados playing badminton">
+<h1 id="club-name"></h1>
+<p id="club-tagline"></p>
+</header>
 
-  <!-- Photos (from data/moments.js) -->
-  <h2>Happy moments</h2>
-  <div class="grid" id="moments"></div>
+<!-- Team record (hidden for now: remove display:none to show it) -->
+<h2 style="display:none">Our team record</h2>
+<div class="card" style="display:none"><div class="vs">
+<div><b id="stat-games">0</b><small>games</small></div>
+<div><b id="stat-wins">0</b><small>wins</small></div>
+<div><b id="stat-losses">0</b><small>losses</small></div>
+</div></div>
 
-  <!-- Badminton Vlogs -->
-  <h2>Badminton Vlog Videos 🎬</h2>
-  <div class="vgrid" id="vlogs"></div>
-  
-  <!-- Trip Vlogs  -->
-  <h2>Trip Vlog ✈️</h2>
-  <div class="vgrid" id="trip-vlogs"></div>
+<!-- Match log (from data/matches.js) -->
+<h2>Achievement</h2>
+<div class="card" id="match-log"><noscript>Please turn on JavaScript to see our games.</noscript></div>
 
-  <footer id="club-footer"></footer>
+<!-- Photos (from data/moments.js) -->
+<h2>Happy moments</h2>
+<div class="grid" id="moments"></div>
+
+<!-- Badminton Vlogs -->
+<h2>Badminton Vlog Videos 🎬</h2>
+<div class="vgrid" id="vlogs"></div>
+
+<!-- Trip Vlogs -->
+<h2>Trip Vlog ✈️</h2>
+<div class="vgrid" id="trip-vlogs"></div>
+
+<footer id="club-footer"></footer>
 </div>
 
 <!-- Your data files: these are the ones you edit -->
@@ -59,7 +59,9 @@
 <script src="data/matches.js"></script>
 <script src="data/moments.js"></script>
 <script src="data/vlogs.js"></script>
+
 <!-- The code that builds the page: no need to touch -->
+<script src="js/lightbox.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>
